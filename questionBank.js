@@ -49,7 +49,7 @@ var MilitaryByMoney = {
 	answerOne:"The United States",
 	answerTwo:"China",
 	answerThree:"Saudi Arabia",
-	answerFour:"United Kingdom",
+	answerFour:"United Kingdom (Britain)",
 	answerFive:"Russia",
 	number: 5,
 	disclaimers: "This question is ranked by national military budget in 2015",

@@ -5,6 +5,7 @@
 
 .jumbotron {
 	background-color: #428bca;
+	color: white;
 }
 
 .unanswered {
@@ -12,3 +13,6 @@
 	visibility: hidden;
 }
 
+#questionNumber {
+	display: inline;
+}

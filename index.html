@@ -6,26 +6,50 @@
 	<link rel="stylesheet" type="text/css" href="battlefeud.css">
 </head>
 <body>
+	<div class="modal hide fade" id="myModal">
+	  <div class="modal-header">
+	    <a class="close" data-dismiss="modal">×</a>
+	    <h3>Modal header</h3>
+	  </div>
+	  <div class="modal-body">
+	    <p>One fine body…</p>
+	  </div>
+	  <div class="modal-footer">
+	    <a href="#" class="btn">Close</a>
+	    <a href="#" class="btn btn-primary">Save changes</a>
+	  </div>
+	</div>
 	<audio src="assets/correct.mp3" id="correctAudio" preload="auto"></audio>
 	<div class="container">
 		<div class="jumbotron">
-			<h1 class="text-center">Welcome to</h1>
 			<h1 class="text-center">BATTLEFEUD</h1>
 		</div>
 		<div class="panel panel-primary">
 			<div class="panel-heading text-center" id="qDisplay"></div>
 			<div class="panel panel-body">
-				<button class="btn btn-danger btn-block" id="display1"></button>
-				<button class="btn btn-danger btn-block" id="display2"></button>
-				<button class="btn btn-danger btn-block" id="display3"></button>
-				<button class="btn btn-danger btn-block" id="display4"></button>
-				<button class="btn btn-danger btn-block" id="display5"></button>
+				<button class="btn btn-primary btn-block" id="display1"></button>
+				<button class="btn btn-primary btn-block" id="display2"></button>
+				<button class="btn btn-primary btn-block" id="display3"></button>
+				<button class="btn btn-primary btn-block" id="display4"></button>
+				<button class="btn btn-primary btn-block" id="display5"></button>
+				<div class="row">
+					<div class="col-sm-10"></div>
+					<div class="col-sm-2">
+						<span id="questionNumber"></span>
+					</div>
+				</div>
 			</div>
 		</div>
-		<button class="btn btn-primary" id="newQuestion">Random Question</button>
+		<div class="row">
+			<div class="col-sm-6">
+				<button class="btn btn-primary" id="newQuestion">Random Question</button>
+			</div>
+		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="questionBank.js"></script>
 	<script type="text/javascript" src="battlefeud.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</script>
 </body>
 </html>
