@@ -6,19 +6,20 @@
 	<link rel="stylesheet" type="text/css" href="battlefeud.css">
 </head>
 <body>
+	<audio src="assets/correct.mp3" id="correctAudio" preload="auto"></audio>
 	<div class="container">
 		<div class="jumbotron">
 			<h1 class="text-center">Welcome to</h1>
 			<h1 class="text-center">BATTLEFEUD</h1>
 		</div>
 		<div class="panel panel-primary">
-			<div class="panel-heading text-center"><h2>Question</h2></div>
+			<div class="panel-heading text-center" id="qDisplay"></div>
 			<div class="panel panel-body">
-				<button class="btn btn-danger btn-block" id="display1"><h3></h3></button>
-				<button class="btn btn-danger btn-block" id="display2"><h3></h3></button>
-				<button class="btn btn-danger btn-block" id="display3"><h3></h3></button>
-				<button class="btn btn-danger btn-block" id="display4"><h3></h3></button>
-				<button class="btn btn-danger btn-block" id="display5"><h3></h3></button>
+				<button class="btn btn-danger btn-block" id="display1"></button>
+				<button class="btn btn-danger btn-block" id="display2"></button>
+				<button class="btn btn-danger btn-block" id="display3"></button>
+				<button class="btn btn-danger btn-block" id="display4"></button>
+				<button class="btn btn-danger btn-block" id="display5"></button>
 			</div>
 		</div>
 		<button class="btn btn-primary" id="newQuestion">Random Question</button>

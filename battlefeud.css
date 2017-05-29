@@ -6,3 +6,9 @@
 .jumbotron {
 	background-color: #428bca;
 }
+
+.unanswered {
+	color: purple;
+	visibility: hidden;
+}
+

@@ -8,16 +8,18 @@ var citiesPopWorld = {
 	answerFour:"Mexico City - Mexico",
 	answerFive:"Sao Paulo - Brazil",
 	number: 1,
+	disclaimers: "",
 }
 
 var smallStatesLand = {
 	title:"Smallest United States by Land Mass",
 	answerOne:"Rhode Island",
-	answerTwo:"Delware",
+	answerTwo:"Delaware",
 	answerThree:"Connecticut",
 	answerFour:"New Jersey",
 	answerFive:"New Hampshire",
 	number: 2,
+	disclaimers: "",
 }
 
 var largeEuropeLand = {
@@ -28,6 +30,7 @@ var largeEuropeLand = {
 	answerFour:"Spain",
 	answerFive:"Sweden",
 	number: 3,
+	disclaimers: "",
 }
 
 var largeCitiesUS = {
@@ -38,8 +41,32 @@ var largeCitiesUS = {
 	answerFour:"Houston, Texas",
 	answerFive:"Philadelphia, Pennsylvania",
 	number: 4,
+	disclaimers: "",
+}
+
+var MilitaryByMoney = {
+	title:"Largest Militaries in the World (by Expenditure)",
+	answerOne:"The United States",
+	answerTwo:"China",
+	answerThree:"Saudi Arabia",
+	answerFour:"United Kingdom",
+	answerFive:"Russia",
+	number: 5,
+	disclaimers: "This question is ranked by national military budget in 2015",
+}
+
+var azCities = {
+	title:"Most Populated Arizona Cities Outside of Phoenix Metro Area",
+	answerOne:"Tucson",
+	answerTwo:"Yuma",
+	answerThree:"Flagstaff",
+	answerFour:"Lake Havasu City",
+	answerFive:"Casa Grande",
+	number: 6,
+	disclaimers: "Based off census 2010 data",
 }
 
 
-// The variable declaration of any new questions added to the question bank need to be added here as well:
-var questionBank = [smallStatesLand, citiesPopWorld, largeEuropeLand, largeCitiesUS];
+
+// The variable declaration of any new questions added to the question bank need to be added here seperated by a comma as well:
+var questionBank = [smallStatesLand, citiesPopWorld, largeEuropeLand, largeCitiesUS, MilitaryByMoney, azCities];
