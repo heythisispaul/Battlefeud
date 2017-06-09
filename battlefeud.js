@@ -44,41 +44,33 @@ setQuestion(randomQuestion);
 			if(answer.id === "display1"){
 				$("#space1").removeClass("unanswered");
 				audioCorrect(answer)
-				$(answer).val("clicked");
+				// $(answer).val("clicked");
 			}if(answer.id === "display2"){
 				$("#space2").removeClass("unanswered");
 				audioCorrect(answer)
-				$(answer).val("clicked");
+				// $(answer).val("clicked");
 			}if(answer.id === "display3"){
 				$("#space3").removeClass("unanswered");
 				audioCorrect(answer)
-				$(answer).val("clicked");
+				// $(answer).val("clicked");
 			}if(answer.id === "display4"){
 				$("#space4").removeClass("unanswered");
 				audioCorrect(answer)
-				$(answer).val("clicked");
+				// $(answer).val("clicked");
 			}if(answer.id === "display5"){
 				$("#space5").removeClass("unanswered");
 				audioCorrect(answer)
-				$(answer).val("clicked");
+				// $(answer).val("clicked");
 		}
 	};
-		// Play the chime sound:
+		// Play the chime sound unless the button has already been clicked:
 	function audioCorrect(clicked) {
 		var correctSound = document.getElementById("correctAudio");
 		correctSound.currentTime = 0;
-		console.log(clicked.id);
 		console.log("value of clicked div:" + clicked.value)
-		if(clicked.id === "display1" && clicked.value === ""){
+		if(clicked.value === ""){
 			correctSound.play();
-		}if(clicked.id === "display2" && clicked.value === ""){
-			correctSound.play();
-		}if(clicked.id === "display3" && clicked.value === ""){
-			correctSound.play();
-		}if(clicked.id === "display4" && clicked.value === ""){
-			correctSound.play();
-		}if(clicked.id === "display5" && clicked.value === ""){
-			correctSound.play();
+			$(clicked).val("clicked");
 		}
 	}
 
