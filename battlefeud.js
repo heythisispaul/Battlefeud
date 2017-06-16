@@ -1,4 +1,4 @@
-$(document).ready( function(){
+$(document).ready(function(){
 
   // Initialize Firebase
   var config = {
@@ -75,23 +75,22 @@ setQuestion(randomQuestion);
 	}
 
 	// Displays the text, plays the chime sound, and changes the color of the answer when clicked:
-	$("#display1").on("click", function(){
+	$("#display1, #display2, #display3, #display4, #display5").on("click", function(){
 		answerClick(this);
 	});
 
-	$("#display2").on("click", function(){
-		answerClick(this);
-	});
-
-	$("#display3").on("click", function(){
-		answerClick(this);
-	});
-
-	$("#display4").on("click", function(){
-		answerClick(this);
-	});
-
-	$("#display5").on("click", function(){
-		answerClick(this);
+	// Will perform count answer as clicked if corresponding number on keyboard is pressed:
+	document.addEventListener("keydown", function(e){
+		if (e.keyCode === 49 || e.keyCode === 97) {
+			answerClick(display1);
+		} else if (e.keyCode === 50 || e.keyCode ===  98) {
+			answerClick(display2);
+		} else if (e.keyCode === 51 || e.keyCode === 99) {
+			answerClick(display3);
+		} else if (e.keyCode === 52 || e.keyCode === 100) {
+			answerClick(display4);
+		} else if (e.keyCode === 53 || e.keyCode === 101) {
+			answerClick(display5);
+		}
 	});
 });
