@@ -12,6 +12,7 @@ $(document).ready(function(){
   firebase.initializeApp(config);
 
 var database = firebase.database();
+// var pushFolder = database.child("pushedResponse"); -- I would eventually like the data pushes and game scores to be stored in different folders.
 var randomQuestion = questionBank[Math.floor(Math.random() * questionBank.length)];
 // Displays the info/screen type popup:
 // $(window).load(function() {
@@ -40,27 +41,24 @@ setQuestion(randomQuestion);
 
 	// Passes through the clicked div, applies the appropriate class and checks which answer number to reveal
 	function answerClick(answer){
-			$(answer).removeClass("btn-primary").addClass("btn-warning");
-			if(answer.id === "display1"){
-				$("#space1").removeClass("unanswered");
-				audioCorrect(answer)
-				// $(answer).val("clicked");
-			}if(answer.id === "display2"){
-				$("#space2").removeClass("unanswered");
-				audioCorrect(answer)
-				// $(answer).val("clicked");
-			}if(answer.id === "display3"){
-				$("#space3").removeClass("unanswered");
-				audioCorrect(answer)
-				// $(answer).val("clicked");
-			}if(answer.id === "display4"){
-				$("#space4").removeClass("unanswered");
-				audioCorrect(answer)
-				// $(answer).val("clicked");
-			}if(answer.id === "display5"){
-				$("#space5").removeClass("unanswered");
-				audioCorrect(answer)
-				// $(answer).val("clicked");
+		$(answer).removeClass("btn-primary").addClass("btn-warning");
+		if(answer.id === "display1"){
+			$("#space1").removeClass("unanswered");
+			audioCorrect(answer)
+		} else if(answer.id === "display2"){
+			$("#space2").removeClass("unanswered");
+			audioCorrect(answer)
+		} else if(answer.id === "display3"){
+			$("#space3").removeClass("unanswered");
+			audioCorrect(answer)
+		} else if(answer.id === "display4"){
+			$("#space4").removeClass("unanswered");
+			audioCorrect(answer)
+		} else if(answer.id === "display5"){
+			$("#space5").removeClass("unanswered");
+			audioCorrect(answer)
+		} else {
+		// alert("uh oh, something went wrong.");
 		}
 	};
 		// Play the chime sound unless the button has already been clicked:
@@ -74,12 +72,15 @@ setQuestion(randomQuestion);
 		}
 	}
 
-	// Displays the text, plays the chime sound, and changes the color of the answer when clicked:
+	// Displays the text, plays the chime sound, and changes the color of the answer when clicked. Also pushes response to firebase if not previously clicked5:
 	$("#display1, #display2, #display3, #display4, #display5").on("click", function(){
+		if(this.value != "clicked"){
+			firebaseSend(this);
+		}
 		answerClick(this);
 	});
 
-	// Will perform count answer as clicked if corresponding number on keyboard is pressed:
+	// Will perform count answer as clicked if corresponding number on keyboard is pressed (not sure how to do this with jquery):
 	document.addEventListener("keydown", function(e){
 		if (e.keyCode === 49 || e.keyCode === 97) {
 			answerClick(display1);
@@ -93,4 +94,16 @@ setQuestion(randomQuestion);
 			answerClick(display5);
 		}
 	});
+
+	// Function that sends the clicked button's info (ID) to Firebase:
+	function firebaseSend(clicked){
+		database.ref().push({
+			clicked: clicked.id
+		});
+	};
+
+	database.ref().on("child_added", function(snapshot) {
+		console.log(snapshot.val().clicked);
+		answerClick(snapshot.val().clicked);
+	})
 });
