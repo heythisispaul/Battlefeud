@@ -14,10 +14,7 @@ $(document).ready(function(){
 var database = firebase.database();
 // var pushFolder = database.child("pushedResponse"); -- I would eventually like the data pushes and game scores to be stored in different folders.
 var randomQuestion = questionBank[Math.floor(Math.random() * questionBank.length)];
-// Displays the info/screen type popup:
-// $(window).load(function() {
-// 	$("#myModal").modal("show");
-// });
+var strikeCount = 0;
 
 // Function that displays the question information on the main screen and sets everything to unanswered:
 function setQuestion(question) {
@@ -28,6 +25,8 @@ function setQuestion(question) {
 	$("#display4").html("<h2 class='unanswered' id='space4'>" + question.answerFour + "</h2>").removeClass("btn-warning").addClass("btn-primary").val("");
 	$("#display5").html("<h2 class='unanswered' id='space5'>" + question.answerFive + "</h2>").removeClass("btn-warning").addClass("btn-primary").val("");
 	$("#questionNumber").text("Question #" + question.number);
+	$("#strikeDisplay").html("");
+	strikeCount = 0;
 }
 
 //displays a question on load:
@@ -58,12 +57,12 @@ setQuestion(randomQuestion);
 			$("#space5").removeClass("unanswered");
 			audioCorrect(answer)
 		} else {
-		// alert("uh oh, something went wrong.");
+		// alert("uh oh, something went wrong. Please try again.");
 		}
 	};
 		// Play the chime sound unless the button has already been clicked:
 	function audioCorrect(clicked) {
-		var correctSound = document.getElementById("correctAudio");
+		let correctSound = document.getElementById("correctAudio");
 		correctSound.currentTime = 0;
 		console.log("value of clicked div:" + clicked.value)
 		if(clicked.value === ""){
@@ -72,7 +71,7 @@ setQuestion(randomQuestion);
 		}
 	}
 
-	// Displays the text, plays the chime sound, and changes the color of the answer when clicked. Also pushes response to firebase if not previously clicked5:
+	// Displays the text, plays the chime sound, and changes the color of the answer when clicked. Also pushes response to firebase if not previously clicked:
 	$("#display1, #display2, #display3, #display4, #display5").on("click", function(){
 		if(this.value != "clicked"){
 			firebaseSend(this);
@@ -80,8 +79,10 @@ setQuestion(randomQuestion);
 		answerClick(this);
 	});
 
-	// Will perform count answer as clicked if corresponding number on keyboard is pressed (not sure how to do this with jquery):
+	// Will perform count answer as clicked if corresponding number on keyboard is pressed:
 	document.addEventListener("keydown", function(e){
+		let wrongSound = document.getElementById("wrongAudio");
+		wrongSound.currentTime = 0;
 		if (e.keyCode === 49 || e.keyCode === 97) {
 			answerClick(display1);
 		} else if (e.keyCode === 50 || e.keyCode ===  98) {
@@ -92,6 +93,12 @@ setQuestion(randomQuestion);
 			answerClick(display4);
 		} else if (e.keyCode === 53 || e.keyCode === 101) {
 			answerClick(display5);
+		} else if (e.keyCode === 32) {
+			strikeCount++;
+			if (strikeCount < 4) {
+			$("#strikeDisplay").append("<h2 id='strike'>X</h2>");
+			wrongSound.play();
+			}
 		}
 	});
 

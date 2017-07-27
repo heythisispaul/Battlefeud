@@ -1,4 +1,15 @@
 // Question Bank:
+//Constructor proved to be more complicated than it was worth for this. 
+const Question = function() {
+	this.title = this,
+	this.answerOne = this,
+	this.answerTwo = this,
+	this.answerThree = this,
+	this.answerFour = this,
+	this.answerFive = this,
+	this.number = this,
+	this.disclaimers = this
+}
 
 var citiesPopWorld = {
 	title:"Most Populous Cities in the World",
