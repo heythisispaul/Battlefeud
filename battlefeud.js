@@ -121,7 +121,7 @@ setQuestion(randomQuestion);
 		//Runs through the length of the array, and injects this HTML and information for each question:
 		for (let i = 0; i <= questionBank.length; i++) {
 			console.log(questionBank[i].title);
-			$("#displayZone").append('<div class="panel panel-primary"><div class="panel-heading text-center">' + questionBank[i].title + '</div><div class="panel panel-body"><button class="btn btn-primary btn-block">' +questionBank[i].answerOne + '</button><button class="btn btn-primary btn-block">' +questionBank[i].answerTwo + '</button><button class="btn btn-primary btn-block">' +questionBank[i].answerThree + '</button><button class="btn btn-primary btn-block">' + questionBank[i].answerFour + '</button><button class="btn btn-primary btn-block">' + questionBank[i].answerFive + '</button><h4>Question Number: ' + questionBank[i].number + '</h4><h4>Disclaiming information: ' +questionBank[i].disclaimers + '</div></div>');
+			$("#displayZone").append('<div class="panel panel-primary"><div class="panel-heading text-center"><h4><strong>' + questionBank[i].title + '</strong></h4></div><div class="panel panel-body"><button class="btn btn-primary btn-block">' +questionBank[i].answerOne + '</button><button class="btn btn-primary btn-block">' +questionBank[i].answerTwo + '</button><button class="btn btn-primary btn-block">' +questionBank[i].answerThree + '</button><button class="btn btn-primary btn-block">' + questionBank[i].answerFour + '</button><button class="btn btn-primary btn-block">' + questionBank[i].answerFive + '</button><h4>Question Number: ' + questionBank[i].number + '</h4><h4>Disclaiming information: ' +questionBank[i].disclaimers + '</div></div>');
 		}
 	}
 

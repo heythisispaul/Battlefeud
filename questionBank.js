@@ -77,6 +77,7 @@ var questionBank = [
 		number: 6,
 		disclaimers: "Based off census 2010 data",
 	},
+
 	{
 		title:"Largest Employers in Arizona",
 		answerOne:"Wal-Mart",
@@ -86,6 +87,160 @@ var questionBank = [
 		answerFive:"Wells Fargo",
 		number: 7,
 		disclaimers: "Information from data from 2015, excludes government agencies.",
+	},
+
+	{
+		title:"Most Watched TV Finales",
+		answerOne:"M*A*S*H",
+		answerTwo:"Cheers",
+		answerThree:"Seinfeld",
+		answerFour:"Friends",
+		answerFive:"Manum, P.I.",
+		number: 8,
+		disclaimers: "Business Insider, 2017"
+	},
+	
+	{
+		title:"US Football Teams with Most Superbowl Appearances",
+		answerOne:"New England Patriots",
+		answerTwo:"Dallas Cowboys",
+		answerThree:"Pittsburgh Steelers",
+		answerFour:"Denver Broncos",
+		answerFive:"San Francisco 49ers",
+		number: 9,
+		disclaimers: "Ties broken by first to accomplish."
+	},
+		
+	{
+		title:"NBA Players with most MVP Awards",
+		answerOne:"Kareem Abdul-Jabbar",
+		answerTwo:"Bill Russell",
+		answerThree:"Michael Jordan",
+		answerFour:"Wilt Chamberlain",
+		answerFive:"Lebron James",
+		number: 10,
+		disclaimers: "Regular season only (doesn't affect rankings but if people ask). Ties broken by first to accomplish."
+	},
+			
+	{
+		title:"US States with Smallest Population",
+		answerOne:"Wyoming",
+		answerTwo:"Vermont",
+		answerThree:"Alaska",
+		answerFour:"North Dakota",
+		answerFive:"South Dakota",
+		number: 11,
+		disclaimers: "Numbers from 2016, excludes territories and districts."
+	},
+				
+	{
+		title:"Busiest Airports in the United States",
+		answerOne:"Hartsfield-Jackson (Atlanta)",
+		answerTwo:"Los Angeles International",
+		answerThree:"O'Hare International (Chicago)",
+		answerFour:"Dallas/Fortworth International",
+		answerFive:"JFK International (NYC)",
+		number: 12,
+		disclaimers: "Data from 2015, total number of passengers enplaned and deplaned."
+	},
+					
+	{
+		title:"Highest Grossing Movies (Inflation Unadjusted)",
+		answerOne:"Avatar",
+		answerTwo:"Titanic",
+		answerThree:"Star Wars: The Force Awakens",
+		answerFour:"Jurassic World",
+		answerFive:"The Avengers",
+		number: 13,
+		disclaimers: "From 2017, total worldwide gross"
+	},
+						
+	{
+		title:"Highest Grossing Movies (Inflation Adjusted)",
+		answerOne:"Gone with the Wind",
+		answerTwo:"Avatar",
+		answerThree:"Star Wars",
+		answerFour:"Titanic",
+		answerFive:"The Sound of Music",
+		number: 14,
+		disclaimers: "Data from 2014, total worldwide gross"
+	},
+							
+	{
+		title:"Most Streamed Artists on Spotify (2016)",
+		answerOne:"Drake",
+		answerTwo:"Justin Bieber",
+		answerThree:"Rihanna",
+		answerFour:"Twenty One Pilots",
+		answerFive:"Kanye West",
+		number: 15,
+		disclaimers: ""
+	},
+								
+	{
+		title:"Movies with Highest Grossing Opening Weekends",
+		answerOne:"The Fate of the Furious",
+		answerTwo:"Star Wars: The Force Awakens",
+		answerThree:"Jurassic World",
+		answerFour:"Harry Potter and the Deathly Hallows - Pt 2",
+		answerFive:"Batman V Superman: Dawn of Justice",
+		number: 16,
+		disclaimers: "As of May, 2017"
+	},
+									
+	{
+		title:"Largest Countries by Population",
+		answerOne:"China",
+		answerTwo:"India",
+		answerThree:"United States",
+		answerFour:"Indonesia",
+		answerFive:"Brazil",
+		number: 17,
+		disclaimers: "As of June, 2017. Includes territories."
+	},
+										
+	{
+		title:"Countries with Most Summer Olympic Gold Medals",
+		answerOne:"United States",
+		answerTwo:"Russia",
+		answerThree:"Germany",
+		answerFour:"Great Britain",
+		answerFive:"France",
+		number: 18,
+		disclaimers: "Through 2016 - summer wins only."
+	},
+											
+	{
+		title:"Restaurant Chains with Most Locations",
+		answerOne:"Subway",
+		answerTwo:"McDonald's",
+		answerThree:"Starbucks",
+		answerFour:"Pizza Hut",
+		answerFive:"Burger King",
+		number: 19,
+		disclaimers: ""
+	},
+												
+	{
+		title:"highest Grossing Actors of All Time",
+		answerOne:"Harrison Ford",
+		answerTwo:"Samuel L Jackson",
+		answerThree:"Morgan Freeman",
+		answerFour:"Tom Hanks",
+		answerFive:"Robert Downy Jr",
+		number: 20,
+		disclaimers: "Total gross of movies they are credited in, males only - through 2016."
+	},
+
+	{
+		title:"highest Grossing Actresses of All Time",
+		answerOne:"Charlize Theron",
+		answerTwo:"Cameron Diaz",
+		answerThree:"Helena Bonham Carter",
+		answerFour:"Cate Blanchett",
+		answerFive:"Julia Roberts",
+		number: 21,
+		disclaimers: "Total gross of movies they are credited in, females only - through 2016."
 	},
 ];
 
