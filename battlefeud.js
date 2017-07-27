@@ -38,24 +38,30 @@ setQuestion(randomQuestion);
 		randomQuestion = questionBank[Math.floor(Math.random() * questionBank.length)];
 	});
 
+	//Callback function that runs when a number is entered in the "Question Number" box and "Go" is pressed:
+	$("#submit").on("click", function() {
+		let selected = $("#qNumber").val();
+		setQuestion(questionBank[selected - 1]);
+	});
+
 	// Passes through the clicked div, applies the appropriate class and checks which answer number to reveal
 	function answerClick(answer){
 		$(answer).removeClass("btn-primary").addClass("btn-warning");
 		if(answer.id === "display1"){
 			$("#space1").removeClass("unanswered");
-			audioCorrect(answer)
+			audioCorrect(answer);
 		} else if(answer.id === "display2"){
 			$("#space2").removeClass("unanswered");
-			audioCorrect(answer)
+			audioCorrect(answer);
 		} else if(answer.id === "display3"){
 			$("#space3").removeClass("unanswered");
-			audioCorrect(answer)
+			audioCorrect(answer);
 		} else if(answer.id === "display4"){
 			$("#space4").removeClass("unanswered");
-			audioCorrect(answer)
+			audioCorrect(answer);
 		} else if(answer.id === "display5"){
 			$("#space5").removeClass("unanswered");
-			audioCorrect(answer)
+			audioCorrect(answer);
 		} else {
 		// alert("uh oh, something went wrong. Please try again.");
 		}
@@ -108,6 +114,18 @@ setQuestion(randomQuestion);
 			clicked: clicked.id
 		});
 	};
+
+	// GAME HOST SCREEN:
+
+	function questionDisplay() {
+		//Runs through the length of the array, and injects this HTML and information for each question:
+		for (let i = 0; i <= questionBank.length; i++) {
+			console.log(questionBank[i].title);
+			$("#displayZone").append('<div class="panel panel-primary"><div class="panel-heading text-center">' + questionBank[i].title + '</div><div class="panel panel-body"><button class="btn btn-primary btn-block">' +questionBank[i].answerOne + '</button><button class="btn btn-primary btn-block">' +questionBank[i].answerTwo + '</button><button class="btn btn-primary btn-block">' +questionBank[i].answerThree + '</button><button class="btn btn-primary btn-block">' + questionBank[i].answerFour + '</button><button class="btn btn-primary btn-block">' + questionBank[i].answerFive + '</button><h4>Question Number: ' + questionBank[i].number + '</h4><h4>Disclaiming information: ' +questionBank[i].disclaimers + '</div></div>');
+		}
+	}
+
+	questionDisplay();
 
 	database.ref().on("child_added", function(snapshot) {
 		console.log(snapshot.val().clicked);

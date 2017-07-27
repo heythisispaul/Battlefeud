@@ -2,12 +2,13 @@
 <html>
 <head>
 	<title>Battlefeud</title>
+	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="./assets/battlefeud.css">
+	<link rel="stylesheet" type="text/css" href="../assets/battlefeud.css">
 </head>
 <body>
-	<audio src="assets/correct.mp3" id="correctAudio" preload="auto"></audio>
-	<audio src="assets/wrong.mp3" id="wrongAudio" preload="auto"></audio>
+	<audio src="../assets/correct.mp3" id="correctAudio" preload="auto"></audio>
+	<audio src="../assets/wrong.mp3" id="wrongAudio" preload="auto"></audio>
 	<div class="container">
 		<!-- <div class="jumbotron">
 			<h1 class="text-center">BATTLEFEUD</h1>
@@ -38,6 +39,11 @@
 						<div class="col-sm-6">
 							<button class="btn btn-primary" id="randomQuestion">Random Question</button>
 						</div>
+						<div class="col-sm-6">
+							<label>Question Number:</label>
+							<input type="number" id="qNumber">
+							<button class="btn btn-primary" id="submit">Go</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -54,10 +60,9 @@
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="questionBank.js"></script>
-	<script type="text/javascript" src="battlefeud.js"></script>
+	<script type="text/javascript" src="../questionBank.js"></script>
+	<script type="text/javascript" src="../battlefeud.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
-</script>
 </body>
 </html>
