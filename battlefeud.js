@@ -44,6 +44,17 @@ setQuestion(randomQuestion);
 		setQuestion(questionBank[selected - 1]);
 	});
 
+	//Will also run if 'Enter' is pressed in the text box:
+	$('#qNumber').bind("enterKey",function(){
+		let selected = $("#qNumber").val();
+		setQuestion(questionBank[selected - 1]);
+	});
+	$('#qNumber').keyup(function(e){
+		if(e.keyCode == 13) {
+		$(this).trigger("enterKey");
+		}
+	});
+
 	// Passes through the clicked div, applies the appropriate class and checks which answer number to reveal
 	function answerClick(answer){
 		$(answer).removeClass("btn-primary").addClass("btn-warning");
